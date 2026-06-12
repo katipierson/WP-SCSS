@@ -163,8 +163,7 @@ class Wp_Scss {
           'sourceMapBasepath' => rtrim(ABSPATH, '/'), // base path for filename normalization
           'sourceRoot' => home_url('/'), // This value is prepended to the individual entries in the 'source' field.
         ));
-
-        $compilationResult = $this->scssc->compileString(file_get_contents($in), $in);
+        $compilationResult = $this->scssc->compileFile($in);
         $css = $compilationResult->getCss();
 
         file_put_contents($this->cache . basename($out), $css);
