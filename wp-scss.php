@@ -69,7 +69,7 @@ if ( get_option( WPSCSS_VERSION_KEY ) !== false ) {
  *    options.php - settings for plugin page
  */
 
-include_once WPSCSS_PLUGIN_DIR . '/scssphp/scss.inc.php'; // Sass Compiler (vendor)
+include_once WPSCSS_PLUGIN_DIR . '/scssphp/vendor/autoload.php'; // Sass Compiler (vendor)
 include_once WPSCSS_PLUGIN_DIR . '/class/class-wp-scss.php'; // Compiling Manager
 include_once WPSCSS_PLUGIN_DIR . '/options.php'; // Options page class
 

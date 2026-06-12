@@ -165,8 +165,8 @@ class Wp_Scss_Settings {
         'name' => 'compiling_options',
         'type' => apply_filters( 'wp_scss_compiling_modes',
           array(
-            OutputStyle::COMPRESSED => ucfirst(OutputStyle::COMPRESSED),
-            OutputStyle::EXPANDED   => ucfirst(OutputStyle::EXPANDED),
+            OutputStyle::COMPRESSED->value => ucfirst(OutputStyle::COMPRESSED->value),
+            OutputStyle::EXPANDED->value   => ucfirst(OutputStyle::EXPANDED->value),
           )
         )
       )

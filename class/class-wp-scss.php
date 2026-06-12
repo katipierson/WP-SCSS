@@ -1,9 +1,9 @@
 <?php
 //Required to use get_home_path()
 require_once(ABSPATH . 'wp-admin/includes/file.php');
-include_once(WPSCSS_PLUGIN_DIR . '/scssphp/scss.inc.php');
+include_once(WPSCSS_PLUGIN_DIR . '/scssphp/vendor/autoload.php');
 use ScssPhp\ScssPhp\Compiler;
-
+use ScssPhp\ScssPhp\OutputStyle;
 class Wp_Scss {
 
   /** @var string - path to source directory for scss files */
@@ -41,7 +41,7 @@ class Wp_Scss {
     $this->compile_errors   = array();
     $this->scssc            = new Compiler();
 
-    $this->scssc->setOutputStyle( $compile_method );
+		$this->scssc->setOutputStyle( OutputStyle::fromString($compile_method) );
     $this->scssc->setImportPaths( $this->scss_dir );
 
     $this->sourcemaps = $sourcemaps;
